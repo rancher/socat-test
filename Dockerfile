@@ -1,7 +1,6 @@
-FROM ubuntu:14.04.1
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y \
-    socat
+FROM alpine:3.1
+RUN apk add --update socat && \
+    rm -rf /var/cache/apk/*
 COPY ./run.sh /
 RUN chmod +x /run.sh
-ENTRYPOINT ["/run.sh"]
+CMD ["/run.sh"]
