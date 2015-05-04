@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo socat -d -d TCP-L:2375,fork UNIX:/var/run/docker.sock
+socat -d -d TCP-L:2375,fork UNIX:/var/run/docker.sock
